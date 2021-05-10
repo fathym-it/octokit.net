@@ -58,7 +58,7 @@ namespace Octokit.Tests.Reactive
                 var options = new ApiOptions();
 
                 client.GetAllForRepository("fake", "repo", request, options);
-                githubClient.Received().Action.Run.GetAllForRepository("fake", "repo", request, options);
+                githubClient.Received().Action.Workflow.Run.GetAllForRepository("fake", "repo", request, options);
             }
 
             [Fact]
@@ -70,7 +70,7 @@ namespace Octokit.Tests.Reactive
                 var options = new ApiOptions();
 
                 client.GetAllForRepository(1, request, options);
-                githubClient.Received().Action.Run.GetAllForRepository(1, request, options);
+                githubClient.Received().Action.Workflow.Run.GetAllForRepository(1, request, options);
             }
         }
     }
