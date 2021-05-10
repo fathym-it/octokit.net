@@ -5,6 +5,6 @@
         /// <summary>
         /// Client for managing workflow runs
         /// </summary>
-        IWorkflowRunsClient Run { get; }
+        IWorkflowsClient Workflow { get; }
     }
 }

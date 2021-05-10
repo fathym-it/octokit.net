@@ -4,9 +4,9 @@
     {
         public ActionsClient(ApiConnection apiConnection)
         {
-            Run = new WorkflowRunsClient(apiConnection);
+            Workflow = new WorkflowsClient(apiConnection);
         }
 
-        public IWorkflowRunsClient Run { get; }
+        public IWorkflowsClient Workflow { get; }
     }
 }

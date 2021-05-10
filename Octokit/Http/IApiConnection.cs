@@ -145,6 +145,17 @@ namespace Octokit
         Task<IReadOnlyList<T>> GetAll<T>(Uri uri, IDictionary<string, string> parameters, string accepts, ApiOptions options);
 
         /// <summary>
+        /// Gets the API resource header informationat the specified URI.
+        /// </summary>
+        /// <typeparam name="T">Type of the API resource to get.</typeparam>
+        /// <param name="uri">URI of the API resource to get</param>
+        /// <param name="parameters">Parameters to add to the API request</param>
+        /// <param name="accepts">Accept header to use for the API request</param>
+        /// <returns>The API resource.</returns>
+        /// <exception cref="ApiException">Thrown when an API error occurs.</exception>
+        Task<IApiResponse<T>> GetApi<T>(Uri uri, IDictionary<string, string> parameters = null, string accepts = null);
+
+        /// <summary>
         /// Creates a new API resource in the list at the specified URI.
         /// </summary>
         /// <param name="uri">URI endpoint to send request to</param>
