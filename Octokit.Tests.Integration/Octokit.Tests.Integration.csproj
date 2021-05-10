@@ -22,7 +22,7 @@
   <PropertyGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1' ">
     <DefineConstants>$(DefineConstants);GITHUBJWT_HELPER_AVAILABLE;SODIUM_CORE_AVAILABLE</DefineConstants>
   </PropertyGroup>
-  
+
   <ItemGroup>
     <Compile Include="..\Octokit.Tests\Helpers\AssertEx.cs" />
     <EmbeddedResource Include="fixtures\hello-world.txt;fixtures\hello-world.zip" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
@@ -54,7 +54,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
-    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.2"  PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
