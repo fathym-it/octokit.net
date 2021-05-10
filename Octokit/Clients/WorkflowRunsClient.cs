@@ -11,16 +11,16 @@ namespace Octokit
         {
         }
 
-        public Task<WorkflowRunsResponse> ListForRepository(long repositoryId)
-            => ListForRepository(repositoryId, new WorkflowRunsRequest(), ApiOptions.None);
+        public Task<WorkflowRunsResponse> GetAllForRepository(long repositoryId)
+            => GetAllForRepository(repositoryId, new WorkflowRunsRequest(), ApiOptions.None);
 
-        public Task<WorkflowRunsResponse> ListForRepository(long repositoryId, WorkflowRunsRequest request)
+        public Task<WorkflowRunsResponse> GetAllForRepository(long repositoryId, WorkflowRunsRequest request)
         {
             Ensure.ArgumentNotNull(request, nameof(request));
-            return ListForRepository(repositoryId, request, ApiOptions.None);
+            return GetAllForRepository(repositoryId, request, ApiOptions.None);
         }
 
-        public Task<WorkflowRunsResponse> ListForRepository(long repositoryId, WorkflowRunsRequest request, ApiOptions options)
+        public Task<WorkflowRunsResponse> GetAllForRepository(long repositoryId, WorkflowRunsRequest request, ApiOptions options)
         {
             Ensure.ArgumentNotNull(request, nameof(request));
             Ensure.ArgumentNotNull(options, nameof(options));
@@ -28,24 +28,24 @@ namespace Octokit
             return RequestAndReturnWorkflowRunsResponse(ApiUrls.WorkflowRunsForRepository(repositoryId), request, options);
         }
 
-        public Task<WorkflowRunsResponse> ListForRepository(string owner, string name)
+        public Task<WorkflowRunsResponse> GetAllForRepository(string owner, string name)
         {
             Ensure.ArgumentNotNullOrEmptyString(owner, nameof(owner));
             Ensure.ArgumentNotNullOrEmptyString(name, nameof(name));
 
-            return ListForRepository(owner, name, new WorkflowRunsRequest(), ApiOptions.None);
+            return GetAllForRepository(owner, name, new WorkflowRunsRequest(), ApiOptions.None);
         }
 
-        public Task<WorkflowRunsResponse> ListForRepository(string owner, string name, WorkflowRunsRequest request)
+        public Task<WorkflowRunsResponse> GetAllForRepository(string owner, string name, WorkflowRunsRequest request)
         {
             Ensure.ArgumentNotNullOrEmptyString(owner, nameof(owner));
             Ensure.ArgumentNotNullOrEmptyString(name, nameof(name));
             Ensure.ArgumentNotNull(request, nameof(request));
 
-            return ListForRepository(owner, name, request, ApiOptions.None);
+            return GetAllForRepository(owner, name, request, ApiOptions.None);
         }
 
-        public Task<WorkflowRunsResponse> ListForRepository(string owner, string name, WorkflowRunsRequest request, ApiOptions options)
+        public Task<WorkflowRunsResponse> GetAllForRepository(string owner, string name, WorkflowRunsRequest request, ApiOptions options)
         {
             Ensure.ArgumentNotNullOrEmptyString(owner, nameof(owner));
             Ensure.ArgumentNotNullOrEmptyString(name, nameof(name));

@@ -8,34 +8,34 @@ namespace Octokit
         /// Lists all workflow runs for a repository
         /// </summary>
         /// <param name="repositoryId">Id of the repository</param>
-        Task<WorkflowRunsResponse> ListForRepository(long repositoryId);
+        Task<WorkflowRunsResponse> GetAllForRepository(long repositoryId);
         /// <summary>
         /// Lists all workflow runs for a repository
         /// </summary>
         /// <param name="repositoryId">Id of the repository</param>
         /// <param name="request">Used to filter and sort the list of workflow runs returned</param>
-        Task<WorkflowRunsResponse> ListForRepository(long repositoryId, WorkflowRunsRequest request);
+        Task<WorkflowRunsResponse> GetAllForRepository(long repositoryId, WorkflowRunsRequest request);
         /// <summary>
         /// Lists all workflow runs for a repository
         /// </summary>
         /// <param name="repositoryId">Id of the repository</param>
         /// <param name="request">Used to filter and sort the list of workflow runs returned</param>
         /// <param name="options">Options for changing the API response</param>
-        Task<WorkflowRunsResponse> ListForRepository(long repositoryId, WorkflowRunsRequest request, ApiOptions options);
+        Task<WorkflowRunsResponse> GetAllForRepository(long repositoryId, WorkflowRunsRequest request, ApiOptions options);
 
         /// <summary>
         /// Lists all workflow runs for a repository
         /// </summary>
         /// <param name="owner">The owner of the repository</param>
         /// <param name="name">The name of the repository</param>
-        Task<WorkflowRunsResponse> ListForRepository(string owner, string name);
+        Task<WorkflowRunsResponse> GetAllForRepository(string owner, string name);
         /// <summary>
         /// Lists all workflow runs for a repository
         /// </summary>
         /// <param name="owner">The owner of the repository</param>
         /// <param name="name">The name of the repository</param>
         /// <param name="request">Used to filter and sort the list of workflow runs returned</param>
-        Task<WorkflowRunsResponse> ListForRepository(string owner, string name, WorkflowRunsRequest request);
+        Task<WorkflowRunsResponse> GetAllForRepository(string owner, string name, WorkflowRunsRequest request);
         /// <summary>
         /// Lists all workflow runs for a repository
         /// </summary>
@@ -43,7 +43,7 @@ namespace Octokit
         /// <param name="name">The name of the repository</param>
         /// <param name="request">Used to filter and sort the list of workflow runs returned</param>
         /// <param name="options">Options for changing the API response</param>
-        Task<WorkflowRunsResponse> ListForRepository(string owner, string name, WorkflowRunsRequest request, ApiOptions options);
+        Task<WorkflowRunsResponse> GetAllForRepository(string owner, string name, WorkflowRunsRequest request, ApiOptions options);
 
         /// <summary>
         /// List all workflow runs for a workflow. You can replace workflow_id with the workflow file name. For example, you could use main.yaml. You can use parameters to narrow the list of results. For more information about using parameters, see Parameters.
