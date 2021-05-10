@@ -13,7 +13,7 @@ namespace Octokit.Reactive
             Ensure.ArgumentNotNull(client, nameof(client));
 
             _connection = client.Connection;
-            _client = client.Action.Run;
+            _client = client.Action.Workflow.Run;
         }
 
         public IObservable<WorkflowRunsResponse> GetAllForRepository(long repositoryId)
