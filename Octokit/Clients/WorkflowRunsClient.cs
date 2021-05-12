@@ -72,7 +72,7 @@ namespace Octokit
 
         private async Task<WorkflowRunsResponse> RequestAndReturnWorkflowRunsResponse(Uri uri, WorkflowRunsRequest request, ApiOptions options)
         {
-            var results = await ApiConnection.GetAll<WorkflowRunsResponse>(uri, request.ToParametersDictionary(), options);
+            var results = await ApiConnection.GetAll<WorkflowRunsResponse>(uri, request?.ToParametersDictionary(), options);
             return new WorkflowRunsResponse(
                 results.Count > 0 ? results.Max(x => x.TotalCount) : 0,
                 results.SelectMany(x => x.WorkflowRuns).ToList());
